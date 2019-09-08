@@ -1,0 +1,180 @@
+<ion-header class="bg-thime">
+  <ion-navbar>
+  <button ion-button menuToggle>
+    <img src="assets/imgs/ic_menu.png">
+  </button>
+    <ion-title>{{"my_acount" | translate}}
+      <span float-right> 
+        <ion-icon padding-right name="ios-search-outline" class="icon"></ion-icon>
+        <ion-icon name="ios-cart-outline" class="icon"></ion-icon>              
+      </span>
+    </ion-title>
+  </ion-navbar>
+  <ion-list padding-left>
+    <ion-item padding-left padding-right>
+      <ion-avatar item-start>
+        <img src="assets/imgs/profile_pix.png">
+      </ion-avatar>
+      <h2 class="">Jhon Smith
+        <small class=""> {{"edit_profile" | translate}}</small>
+      </h2>
+      <p class="text-dark">+91 908 765 4321
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-toolbar no-border-top class="tab-bar">
+    <ion-segment [(ngModel)]="account">
+      <ion-segment-button value="profile">
+        {{"profile" | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        {{"my_cards" | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="address">
+        {{"my_address" | translate}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="account">
+    <div *ngSwitchCase="'profile'" class="profile-section">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>{{"name" | translate}}</ion-label>
+          <ion-input type="text" value="Jhon Smith"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{"email1" | translate}}</ion-label>
+          <ion-input type="email" value="Jhonsmith9448@gmail.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{"phone" | translate}}</ion-label>
+          <ion-input type="text" value="+91 908 765 4321"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>{{"Gender" | translate}}</ion-label>
+          <ion-input type="text" value="Mail"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{"bday" | translate}}</ion-label>
+          <ion-input type="text" value="23 Dec, 1990"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'card'" class="card-section bg-light">
+      <ion-card>
+        <ion-card-content>
+          <div class="card-row">XXXX XXXX XXXX 5887
+            <img src="assets/imgs/visa.png">
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <div class="card-row">XXXX XXXX XXXX 5887
+            <img src="assets/imgs/master-card.png">
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <div class="form" padding-left padding-right>
+          <p padding-bottom margin-bottom>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>{{"add_n_card" | translate}} <span>{{"save" | translate}}</span></p>
+          <ion-list>
+            <ion-item>
+              <ion-label>{{"card_type" | translate}}</ion-label>
+              <ion-input type="text" text-right value="Visa Express"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{"card_number" | translate}}</ion-label>
+              <ion-input type="text" text-right value="1234-1234-1234-1234"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{"card_name" | translate}}</ion-label>
+              <ion-input type="text" text-right value="Jhon Smith"></ion-input>
+            </ion-item>
+            <div class="date-cvc-row">
+              <div class="date">
+                <ion-item>
+                  <ion-label>Expiry Date</ion-label>
+                  <ion-input type="text" text-right value="10/23"></ion-input>
+                </ion-item>
+              </div>
+              <div class="cvc">
+                <ion-item>
+                  <ion-label>CVV</ion-label>
+                  <ion-input type="text" text-right value="234"></ion-input>
+                </ion-item>
+              </div>
+            </div>
+            <ion-item class="border-none">
+              <ion-label text-right> {{"save_card_details" | translate}}</ion-label>
+              <ion-toggle checked="false"></ion-toggle>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'address'" class="address-section bg-light">
+      <ion-card>
+        <ion-card-content>
+          <div class="addres-detail">
+            <h3> 
+              <ion-icon name="ios-pin-outline" class="icon-position"> </ion-icon>
+              Jhon Smith 
+              <span>{{"change" | translate}}
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+              </span>
+            </h3>
+            <p>DE234 Mapleridge Drive Plano,<br> Texas 743A US.</p>
+            <p>+91 908765432</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <div class="form" padding-left padding-right>
+          <p padding-bottom margin-bottom>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>{{"add_n_card" | translate}}<span>{{"save" | translate}}</span>
+          </p>
+          <ion-list>
+            <ion-item>
+              <ion-label>{{"pin" | translate}}</ion-label>
+              <ion-input type="text" text-right value="110092"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{"address" | translate}}</ion-label>
+              <ion-input type="text" text-right value="DE234 Mapleridge Drive Plano,"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{"phone" | translate}}</ion-label>
+              <ion-input type="text" text-right value="+91 908 765 4321"></ion-input>
+            </ion-item>
+            <div class="date-cvc-row">
+              <div class="city">
+                <ion-item>
+                  <ion-label>{{"city" | translate}}</ion-label>
+                  <ion-input type="text" text-right value="Delhi"></ion-input>
+                </ion-item>
+              </div>
+              <div class="State">
+                <ion-item>
+                  <ion-label>{{"state" | translate}}</ion-label>
+                  <ion-input type="text" text-right value="Delhi"></ion-input>
+                </ion-item>
+              </div>
+            </div>
+            <ion-item class="border-none">
+              <ion-label text-right>{{"set_default_address" | translate}}</ion-label>
+              <ion-toggle checked="true"></ion-toggle>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header class="bg-thime">
+    <ion-navbar>
+        <ion-title>Vegetable & Fruits
+            <div class="icon-box">
+                <img src="assets/imgs/search.png" (click)="searchPage()">
+                <img src="assets/imgs/ic_my_cart.png" (click)="cartPage()">
+            </div>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light">
+    <div class="d-flex">
+        <p>410 {{"itms_found" | translate}}</p>
+        <div class="icon-box">
+            <ion-icon name="ios-swap-outline" class="icon" (click)="shortPage()"><span>{{"sort_by" | translate}}</span></ion-icon>
+            <ion-icon name="md-funnel" class="icon" (click)="filterPage()"><span>{{"filter" | translate}}</span></ion-icon>
+        </div>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let item of results" (click)="itemdetailPage(item._id,item.name,item.price)">
+        <ion-thumbnail item-start>
+          <img src="{{url+item.defaultImg}}">
+        </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+        <p>{{item.price}}</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-card *ngFor="let item of results">
+      <ion-row (click)="itemdetailPage(item._id,item.name,item.price)">
+        <ion-col>
+          <ion-thumbnail slot="start">
+          <img [src]="url+item.defaultImg">
+        </ion-thumbnail>
+
+        </ion-col>
+        <ion-col>
+            <h5 [innerHTML]="item.name"></h5>
+            <h5 style="font-weight:bold" [innerHTML]="item.price"></h5>
+        </ion-col>
+      </ion-row>
+    </ion-card> -->
+    <!-- <ion-row>
+        <ion-col col-12 *ngFor="let item of results">
+            <ion-card (click)="itemdetailPage()">
+                <ion-card-header>
+                    <h5 [innerHTML]="item.name"></h5>
+                    <small class="text-light" [innerHTML]="item.name"></small>
+                    <div class="img-box">
+                        <img [src]="url+item.defaultImg">
+                    </div>
+                </ion-card-header>
+                <ion-card-content>
+                    <p><span [innerHTML]="item.price"></span> £<small>{{item.size}}</small>
+                        <ion-icon name="md-arrow-dropdown"></ion-icon>
+                    </p>
+                    <div class="btn text-white">{{"add" | translate}}</div>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row> -->
+</ion-content>

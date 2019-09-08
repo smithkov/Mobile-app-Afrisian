@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <img src="assets/imgs/ic_menu.png">
+    </button>
+    <ion-title>{{itemName}}
+      <div class="icon-box">
+        <img src="assets/imgs/search.png" (click)="searchPage()">
+        <img src="assets/imgs/ic_my_cart.png" (click)="cartPage()">
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light">
+  <ion-card>
+   <img style="height:200px" src="{{url+img}}"/>
+   <ion-card-content>
+     <ion-card-title>
+       {{itemName}}
+     </ion-card-title>
+     <p>
+       {{definition}}
+     </p>
+   </ion-card-content>
+   <ion-row>
+   <ion-col>
+      <div>Price: <strong>£{{itemPrice}}</strong></div>
+    </ion-col>
+    <ion-col>
+        <div>Weight: <strong>{{weight}}</strong></div>
+    </ion-col>
+  </ion-row>
+  <div class="price-section shadow-bottom bg-white">
+    <div class="d-flex">
+
+      <div class="d-flex btn-grup">
+        <div class="btn text-white bg-thime green-shadow "> - </div>
+        <span>1</span>
+        <div class="btn text-white bg-thime green-shadow "> + </div>
+      </div>
+    </div>
+  </div>
+
+ </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+   <button ion-button full color="light" round>Add to card</button>
+  </ion-toolbar>
+</ion-footer>

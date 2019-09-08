@@ -1,0 +1,140 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+    <ion-icon class="menu-icon"><img src="assets/imgs/ic_menu.png"></ion-icon>
+    </button>
+        <ion-title>{{"confirm_order" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light">
+    <div class="address-section">
+        <ion-row text-center class="status">
+            <ion-col class="complate">
+                <ion-icon name="ios-checkmark-circle"></ion-icon><span>{{"login" | translate}}</span></ion-col>
+            <ion-col class="processing">
+                <ion-icon name="md-radio-button-off"></ion-icon><span>{{"shipping" | translate}}</span></ion-col>
+            <ion-col class="panding">
+                <ion-icon name="ion-record"></ion-icon><span>{{"payment" | translate}}</span></ion-col>
+        </ion-row>
+        <ion-card>
+            <ion-card-header>
+              <p> {{"your_dlvr_address" | translate}}<span class="text-sky">{{"change" | translate}}<ion-icon name="ios-arrow-forward" class="icon"></ion-icon></span></p>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="addres-detail">
+                <h3>
+                    <ion-icon name="ios-pin-outline" class="icon-position"></ion-icon>Johan Smith
+                </h3>
+                <p>DE234 Mapleridge Drive Plano,<br> Texas 743A US.</p>
+                <p>+91 908765432</p>
+              </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div class="your-items">
+        <ion-card>
+            <ion-card-header>
+                <p>{{"ur_item" | translate}}</p>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-4>
+                      <div class="img-box">
+                          <img src="assets/imgs/veg-1.jpg">
+                      </div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <h4>Fresh onion Medium Size <br>Apporx 10 Pcs in 1Kg</h4>
+                        <p class="d-flex">
+                          1.50 $ <span class="d-flex">per kg
+                            <ion-icon name="md-arrow-dropdown"></ion-icon>
+                          </span>
+                        </p>
+                        <div class="price ">
+                            <div class="d-flex">
+                                <p class="text-red">
+                                    {{"remove" | translate}}
+                                </p>
+                                <div class="d-flex btn-grup">
+                                    <div class="btn text-white bg-thime green-shadow ">
+                                        -
+                                    </div>
+                                    <span>1 KG</span>
+                                    <div class="btn text-white bg-thime green-shadow ">
+                                        +
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div class="your-items">
+        <ion-card>
+            <ion-card-header>
+                <p>{{"ur_item" | translate}}</p>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-4>
+                        <div class="img-box">
+                            <img src="assets/imgs/veg-2.jpg">
+                        </div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <h4>Fresh onion Medium Size <br>Apporx 10 Pcs in 1Kg</h4>
+                        <p class="d-flex">
+                            1.50 $ <span class="d-flex">per kg
+                                <ion-icon name="md-arrow-dropdown"></ion-icon>
+                            </span>
+                        </p>
+                        <div class="price ">
+                            <div class="d-flex">
+                                <p class="text-red">
+                                    {{"remove" | translate}}
+                                </p>
+                                <div class="d-flex btn-grup">
+                                    <div class="btn text-white bg-thime green-shadow ">
+                                        -
+                                    </div>
+                                    <span>1 KG</span>
+                                    <div class="btn text-white bg-thime green-shadow ">
+                                        +
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div class="spacebar-bottom"></div>
+    <div class="receipt btn-fisx-bottom">
+        <ion-card>
+            <ion-card-header>
+                <p>{{"item_price" | translate}}
+                    <span text-right><img src="assets/imgs/rupee-black.png">
+                    3.80 $
+                    </span>
+                </p>
+                <p>{{"dlvr_pybl" | translate}}
+                    <span text-right><img src="assets/imgs/rupee-black.png">
+                   0.40 $
+                    </span>
+                </p>
+            </ion-card-header>
+            <ion-card-content>
+                <p>{{"amt_pybl" | translate}}
+                    <span text-right><img src="assets/imgs/rupee-black.png">
+                   4.20$
+                    </span>
+                </p>
+                <button ion-button full class="bg-green btn-round green-shadow btn-text" (click)="paymentPage()" text-uppercase>{{"continue" | translate}}</button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

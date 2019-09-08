@@ -1,14 +1,43 @@
-<ion-header>
+<ion-header class="bg-thime">
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <button ion-button menuToggle style="display: block !important;">
+       <img src="assets/imgs/ic_menu.png">
+    </button>
+    <ion-title text-uppercase>{{"app_title" | translate}}
+      <div class="icon-box">
+        <img src="assets/imgs/ic_my_cart.png" (click)="cartPage()">
+        <ion-badge>2</ion-badge>
+      </div>
     </ion-title>
   </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Brand or Product..." (click)="searchPage()"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items"> </ion-item>
+  </ion-list>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content style="background: #f9f9f9;">
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image" />
+      <div class="banner-text">
+        <small [innerHTML]="slide.smalltext"></small>
+        <p [innerHTML]="slide.description"></p>
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <h4 text-center>{{"shop_by" | translate}}</h4>
+  <div class="bg-white">
+    <ion-row>
+      <ion-col col-4 (click)="listingPage($event, item._id)" *ngFor="let item of results">
+        <div class="item-box">
+          <ion-avatar>
+          <img  [src]="url+item.path">
+        </ion-avatar>
+          <p [innerHTML]="item.name"></p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
